@@ -15,3 +15,10 @@ class OrganizationSerializer(ModelSerializer):
     class Meta:
         model = Organization
         fields = ['name', 'description', 'shops']
+
+
+class ShopDetailSerializer(ModelSerializer):
+    class Meta:
+        model = Shop
+        fields = '__all__'
+
