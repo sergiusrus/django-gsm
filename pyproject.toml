@@ -12,6 +12,7 @@ drf-renderer-xlsx = "0.4.5"
 python-dateutil = "2.8.2"
 drf-yasg = "^1.20.0"
 whitenoise = "^6.0.0"
+djangorestframework-simplejwt = "^5.1.0"
 
 [tool.poetry.dev-dependencies]
 django-seed = "0.3.1"
