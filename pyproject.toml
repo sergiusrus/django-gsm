@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "django-gsm"
+version = "0.1.0"
+description = "The test app"
+authors = ["Sergey Ovsyannikov <sergovs22@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "4.0.2"
+djangorestframework = "3.13.1"
+drf-renderer-xlsx = "0.4.5"
+python-dateutil = "2.8.2"
+
+[tool.poetry.dev-dependencies]
+django-seed = "0.3.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
