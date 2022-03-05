@@ -142,4 +142,10 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
         'drf_renderer_xlsx.renderers.XLSXRenderer',
     ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'gsm_app.permissions.IsApiUser',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
 }
