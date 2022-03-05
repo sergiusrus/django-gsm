@@ -84,6 +84,17 @@ Faker = ">=0.7.7"
 toposort = ">=1.5"
 
 [[package]]
+name = "django4-background-tasks"
+version = "1.2.7"
+description = "Database backed asynchronous task queue"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+
+[[package]]
 name = "djangorestframework"
 version = "3.13.1"
 description = "Web APIs for Django, made easy."
@@ -387,7 +398,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "4d22c226d673038c11800c5b53e64ed589ddc47c5c397ace8c4c0d0612462c2b"
+content-hash = "d009f94ce6859047c7834c9f06d6468b33b48890f5b27d54037b3967c18c4fee"
 
 [metadata.files]
 asgiref = [
@@ -416,6 +427,9 @@ django = [
 ]
 django-seed = [
     {file = "django-seed-0.3.1.tar.gz", hash = "sha256:93e65d2c10449c464b83e9031be02763ec10e786aa064d649c4dd5ad06fa0eea"},
+]
+django4-background-tasks = [
+    {file = "django4-background-tasks-1.2.7.tar.gz", hash = "sha256:7ae7e2e698ef50757b582e1c0964a4b47cd3c162eb487ca59e0ca999625a674c"},
 ]
 djangorestframework = [
     {file = "djangorestframework-3.13.1-py3-none-any.whl", hash = "sha256:24c4bf58ed7e85d1fe4ba250ab2da926d263cd57d64b03e8dcef0ac683f8b1aa"},

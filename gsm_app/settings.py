@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Applications for Django
     'rest_framework',
     'drf_yasg',
+    'background_task',
 
     # Dev Applications for Django
     'django_seed',
@@ -149,3 +150,5 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
