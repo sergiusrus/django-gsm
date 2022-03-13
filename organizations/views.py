@@ -1,7 +1,9 @@
+from asgiref.sync import async_to_sync
 from drf_renderer_xlsx.mixins import XLSXFileMixin
 from drf_renderer_xlsx.renderers import XLSXRenderer
 from rest_framework import generics
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from channels.layers import get_channel_layer
 
 from gsm_app.tasks import send_email_from_put
 from organizations.models import Organization, Shop
@@ -25,5 +27,20 @@ class ShopUpdate(generics.UpdateAPIView):
     serializer_class = ShopDetailSerializer
 
     def put(self, request, *args, **kwargs):
+        _send_to_websocket(self.get_object())
         send_email_from_put()
         return self.update(request, *args, **kwargs)
+
+    def patch(self, request, *args, **kwargs):
+        _send_to_websocket(self.get_object())
+        send_email_from_put()
+        return self.update(request, *args, **kwargs)
+
+
+def _send_to_websocket(obj):
+    shop = Shop.objects.values().get(pk=obj.id)
+    channel_layer = get_channel_layer()
+    async_to_sync(channel_layer.group_send)("shop", {
+        "type": "shop.message",
+        "text": shop
+    })

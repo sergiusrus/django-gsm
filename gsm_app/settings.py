@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'background_task',
     'drf_api_logger',
+    'channels',
 
     # Dev Applications for Django
     'django_seed',
@@ -83,6 +84,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'gsm_app.wsgi.application'
+ASGI_APPLICATION = 'gsm_app.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 
 # Database
