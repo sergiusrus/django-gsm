@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -19,6 +20,7 @@ class Shop(models.Model):
     address = models.CharField(max_length=50)
     index = models.PositiveIntegerField(default=0)
     is_deleted = models.BooleanField(default=False)
+    users = models.ManyToManyField(User, related_name='shop_users')
 
     @property
     def organization_name(self):
