@@ -229,6 +229,18 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-debug-toolbar"
+version = "3.2.4"
+description = "A configurable set of panels that display various debug information about the current request/response."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+Django = ">=2.2"
+sqlparse = ">=0.2.0"
+
+[[package]]
 name = "django-seed"
 version = "0.3.1"
 description = "Seed your Django project with fake data"
@@ -814,7 +826,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "2a1594b65698edc8a3cf3739fa672db8dd484e6ea77a5a2f03fee87f79e468c9"
+content-hash = "4d2f0811c3f07bb9a8063b687b6bffeed174b0040e08624660163ac1ae849fef"
 
 [metadata.files]
 asgiref = [
@@ -949,6 +961,10 @@ daphne = [
 django = [
     {file = "Django-4.0.2-py3-none-any.whl", hash = "sha256:996495c58bff749232426c88726d8cd38d24c94d7c1d80835aafffa9bc52985a"},
     {file = "Django-4.0.2.tar.gz", hash = "sha256:110fb58fb12eca59e072ad59fc42d771cd642dd7a2f2416582aa9da7a8ef954a"},
+]
+django-debug-toolbar = [
+    {file = "django-debug-toolbar-3.2.4.tar.gz", hash = "sha256:644bbd5c428d3283aa9115722471769cac1bec189edf3a0c855fd8ff870375a9"},
+    {file = "django_debug_toolbar-3.2.4-py3-none-any.whl", hash = "sha256:6b633b6cfee24f232d73569870f19aa86c819d750e7f3e833f2344a9eb4b4409"},
 ]
 django-seed = [
     {file = "django-seed-0.3.1.tar.gz", hash = "sha256:93e65d2c10449c464b83e9031be02763ec10e786aa064d649c4dd5ad06fa0eea"},
