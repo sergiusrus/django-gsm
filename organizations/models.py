@@ -6,9 +6,6 @@ class Organization(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)
 
-    def get_active_shops(self):
-        return self.shops.filter(is_deleted=False)
-
     def __str__(self):
         return self.name
 

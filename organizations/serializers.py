@@ -17,7 +17,7 @@ class ShopSerializer(ModelSerializer):
 
 
 class OrganizationSerializer(ModelSerializer):
-    shops = ShopSerializer(many=True, source='get_active_shops')
+    shops = ShopSerializer(many=True, read_only=True)
 
     class Meta:
         model = Organization

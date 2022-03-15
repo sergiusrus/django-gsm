@@ -11,7 +11,7 @@ from organizations.serializers import OrganizationSerializer, ShopDetailSerializ
 
 
 class OrganizationList(generics.ListAPIView):
-    queryset = Organization.objects.all()
+    queryset = Organization.objects.all().prefetch_related('shops')
     serializer_class = OrganizationSerializer
 
 
@@ -23,7 +23,7 @@ class OrganizationListFile(XLSXFileMixin, ReadOnlyModelViewSet):
 
 
 class ShopUpdate(generics.UpdateAPIView):
-    queryset = Shop.objects.all()
+    queryset = Shop.objects.all().prefetch_related('users')
     serializer_class = ShopDetailSerializer
 
     def put(self, request, *args, **kwargs):
