@@ -7,7 +7,7 @@ from channels.layers import get_channel_layer
 
 from gsm_app.tasks import send_email_from_put
 from organizations.models import Organization, Shop
-from organizations.serializers import OrganizationSerializer, ShopDetailSerializer
+from organizations.serializers import OrganizationSerializer, ShopDetailSerializer, ShopDetailUserSerializer
 
 
 class OrganizationList(generics.ListAPIView):
@@ -35,6 +35,11 @@ class ShopUpdate(generics.UpdateAPIView):
         _send_to_websocket(self.get_object())
         send_email_from_put()
         return self.update(request, *args, **kwargs)
+
+
+class ShopDetailUserList(generics.RetrieveAPIView):
+    queryset = Shop.objects.all()
+    serializer_class = ShopDetailUserSerializer
 
 
 def _send_to_websocket(obj):

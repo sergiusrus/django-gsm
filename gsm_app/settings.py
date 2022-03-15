@@ -168,5 +168,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DRF_API_LOGGER_DATABASE = True
 
 INTERNAL_IPS = [
-    "127.0.0.1",
+    '127.0.0.1',
 ]
